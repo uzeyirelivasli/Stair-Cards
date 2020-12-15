@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(17, 233, 197, 0.728);
+}
+#container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.card{
+    position: absolute;
+    background-color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    height: 500px;
+    padding: 10px;
+    left: 38%;
+    transition: .4s;
+    transform: rotate(30deg) skew(-30deg);
+    box-shadow: 5px 5px 5px black;
+}
+/* stair effect */
+#container .card:first-child{
+    transform: rotate(30deg) skew(-30deg) translate(0px,23px);
+}
+#container .card:nth-child(2){
+    transform: rotate(30deg) skew(-30deg) translate(0px,10px);
+}
+#container .card:last-of-type{
+    transform: rotate(30deg) skew(-30deg) translate(0px,0px);
+}
+/* card text */
+.card *{
+    opacity: 0;
+    transition: .4s;
+}
+#container:hover .card *{
+    opacity: 1;
+}
+
+/* bu kodda sixinti var */
+#container:hover .card{
+    transform: rotate(0deg);
+}
+
+#container:hover .card:first-child{
+    left: 5%;
+}
+#container:hover .card:nth-child(2){
+    left: 35%;
+}
+#container:hover .card:last-of-type{
+    left: 65%;
+}
